@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchRecipes } from './redux/recipesSlice';
+import RecipeList from './components/recipes/RecipeList';
+import RecipeDetail from './components/recipes/RecipeDetail';
+import styles from './App.module.scss';
+
+
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchRecipes());
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.app}>
+      <div className={styles.recipeListContainer}>
+        <RecipeList />
+      </div>
+      <div className={`recipe-detail ${styles.recipeDetailContainer}`}>
+        <RecipeDetail />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
+

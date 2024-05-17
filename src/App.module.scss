@@ -1,0 +1,16 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+
+  .recipeListContainer {
+    flex: 1;
+    background-color: #f8f9fa;
+  }
+
+  .recipeDetailContainer {
+    flex: 2;
+    background-color: #ffffff;
+    padding: 20px;
+    transition: opacity 0.5s ease-in-out;
+  }
+}

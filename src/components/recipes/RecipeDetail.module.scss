@@ -1,0 +1,35 @@
+.recipeDetail {
+  padding: 20px;
+  text-align: center;
+  background-color: #4486c8; // Updated background color
+  max-width: 800px; // Set container size to small
+  margin: 0 auto;
+  border-radius: 10px;
+  opacity: 0; // Initially set opacity to 0
+  transition: opacity 0.3s ease-in-out; // Add transition for opacity change
+  h2 {
+    margin-top: 0;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  img {
+    max-width: 60%; // Adjusted image size to display it in medium size
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    text-align: left;
+    line-height: 1.6;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  &.show {
+    opacity: 1; // Show the container with smooth transition
+  }
+}
